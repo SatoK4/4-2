@@ -13,9 +13,9 @@
   <body>
     <header>
       <% if user_signed_in? %>
-        <!--<li>-->
-        <!--Homeへのリンク-->
-        <!--</li>-->
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
         <!--<li>-->
         <!--  Usersへのリンク-->
         <!--</li>-->
@@ -24,6 +24,19 @@
         <!--</li>-->
         <li>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <!--<li>-->
+          <!--  Aboutへのリンク-->
+        <!--</li>-->
+        <li>
+          <%= link_to "Sign up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "Sign in", new_user_session_path %>
         </li>
       <% end %>
     </header>
