@@ -6,7 +6,6 @@
   <table>
     <tr>
       <th>name</th>
-      <!--名前を表示-->
       <th><%= current_user.name %></th>
     </tr>
     <tr>
@@ -14,6 +13,12 @@
       <th><%= current_user.introduction %></th>
     </tr>
   </table>
+  <button>
+    <i class="fa-solid fa-user-gear" style="color: #6c757d;">
+      <!--editへ遷移先を設定-->
+      <!--link_to edit_user_path -->
+      </i>
+  </button>
 
 <!--新規投稿フォーム-->
   <h2>New book</h2>
