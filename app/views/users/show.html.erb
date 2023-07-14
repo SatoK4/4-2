@@ -11,17 +11,17 @@
     <th><%= @user.introduction %></th>
   </tr>
 </table>
-<button>
-  <i class="fa-solid fa-user-gear" style="color: #6c757d;">
-    <% if @user == current_user %>
-      <!--editへ遷移先を設定-->
-      <!-- link_to "edit", edit_user_path-->
-    <% else %>
-      <!--マイページへ遷移-->
-      <% link_to "my page", user_path(current_user.id) %>
-    <% end %>
-  </i>
- </button>
+<% if @user == current_user %>
+  <!--editへ遷移先を設定-->
+  <%= link_to edit_user_path(current_user.id) do %>
+    <i class="fa-solid fa-user-gear" style="color: #6c757d;"></i>
+  <% end %>
+<% else %>
+  <!--マイページへ遷移-->
+  <%= link_to user_path(current_user.id) do %>
+    <i class="fa-solid fa-user-gear" style="color: #6c757d;"></i>
+  <% end %>
+<% end %>
 
 <!--新規投稿フォーム-->
 <h2>New book</h2>
