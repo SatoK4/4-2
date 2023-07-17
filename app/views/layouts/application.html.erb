@@ -15,7 +15,9 @@
     <header class="bg-dark">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand text-light px-16 py-8" href="/">Bookers</a>
+          <%= link_to root_path, class:"navbar-brand text-light px-16 py-8" do %>
+          Bookers
+          <% end %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -24,42 +26,50 @@
               <% if user_signed_in? %>
                 <li class="nav-item">
                   <%= link_to user_path(current_user.id), class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-house-chimney" style="color: #ffffff;"></i>
                   Home
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to users_path, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-users" style="color: #ffffff;"></i>
                   Users
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to books_path, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-book-open" style="color: #ffffff;"></i>
                   Books
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
                   Log out
                   <% end %>
                 </li class=>
               <% else %>
                 <li class="nav-item">
                   <%= link_to root_path, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-house-chimney" style="color: #ffffff;"></i>
                   Home
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to about_path, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-link" style="color: #ffffff;"></i>
                   About
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
-                  Sign in
+                  <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+                  Sign up
                   <% end %>
                 </li>
                 <li class="nav-item">
                   <%= link_to new_user_session_path, class:"nav-link text-light" do %>
+                  <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
                   Log in
                   <% end %>
                 </li>
