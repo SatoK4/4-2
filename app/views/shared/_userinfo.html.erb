@@ -1,22 +1,23 @@
 <!--ユーザー情報-->
 <h2>User info</h2>
-<%= image_tag current_user.get_profile_image(100,100) %>
-<table>
+<%= image_tag user.get_profile_image(100,100) %>
+<table class="table">
   <tr>
     <th>name</th>
-    <th><%= current_user.name %></th>
+    <th><%= user.name %></th>
   </tr>
   <tr>
     <th>introduction</th>
-    <th><%= current_user.introduction %></th>
+    <th><%= user.introduction %></th>
   </tr>
 </table>
-<%= link_to edit_user_path(current_user.id) do %>
+<div class="row">
+<%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block" do %>
   <i class="fa-solid fa-user-gear" style="color: #6c757d;"></i>
 <% end %>
-
+</div>
 <!--新規投稿フォーム-->
-<h2>New book</h2>
+<h2 class="mt-3">New book</h2>
 <%= form_with model: book do |f| %>
   <label for = "book_title">Title</label><br />
   <%= f.text_field :title %><br />
