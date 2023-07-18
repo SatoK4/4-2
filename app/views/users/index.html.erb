@@ -1,4 +1,4 @@
-<%= render 'shared/userinfo', book: @book %>
+<%= render 'shared/userinfo', book: @book, user: current_user%>
 
 <h2>Users</h2>
 <table>
@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tboby>
-    <% @user.each do |user| %>
+    <% @users.each do |user| %>
     <tr>
       <td><%= image_tag user.get_profile_image(100,100) %></td>
       <td><%= user.name %></td>
